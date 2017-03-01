@@ -9,7 +9,8 @@ import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.data.Stat;
 
 public class ZookeeperServer {
-	private static String URL = "192.168.1.176:2181";
+//	private static String URL = "192.168.1.176:2181";
+	private static String URL = "192.168.204.128:2181";
 	private static ZooKeeper  zooKeeper = null;
 	private ZookeeperServer(){}
 	
