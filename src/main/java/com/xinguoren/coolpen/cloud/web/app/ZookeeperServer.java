@@ -41,6 +41,6 @@ public class ZookeeperServer {
 	
 	public static void main(String[] args) throws Exception{
 //		createZNode();
-		System.out.println(getNodeData("/gaoxugang"));
+		System.out.println(getNodeData("/"));
 	}
 }
