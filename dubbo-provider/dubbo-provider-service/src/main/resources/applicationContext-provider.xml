@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!--spring配置自动扫描-->
+	<context:component-scan base-package="com.xyz" />
+
+	<dubbo:application name="dubbo-provider" />
+	<!--zookeeper 地址为本地虚拟机-->
+	<dubbo:registry address="zookeeper://192.168.202.129:2181" />
+	<dubbo:protocol name="dubbo" port="20880" />
+
+	<!-- 声明需要暴露的服务接口 -->
+	<dubbo:service interface="com.xyz.dubbo.provider.service.UserService" ref="userService" />
+
+
+
+
+</beans>

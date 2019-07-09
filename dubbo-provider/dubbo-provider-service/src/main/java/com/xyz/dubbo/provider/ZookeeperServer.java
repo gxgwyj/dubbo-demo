@@ -1,6 +1,4 @@
-package com.xyz.dubbo.client.app;
-
-import java.io.IOException;
+package com.xyz.dubbo.provider;
 
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
@@ -8,8 +6,10 @@ import org.apache.zookeeper.ZooDefs.Ids;
 import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.data.Stat;
 
+import java.io.IOException;
+
 public class ZookeeperServer {
-	private static String URL = "192.168.204.128:2181";
+	private static String URL = "192.168.202.129:2181";
 	private static ZooKeeper  zooKeeper = null;
 	private ZookeeperServer(){}
 	
@@ -39,7 +39,6 @@ public class ZookeeperServer {
 	
 	
 	public static void main(String[] args) throws Exception{
-//		createZNode();
 		System.out.println(getNodeData("/"));
 	}
 }

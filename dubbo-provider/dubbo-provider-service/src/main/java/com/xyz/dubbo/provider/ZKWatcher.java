@@ -1,4 +1,4 @@
-package com.xyz.dubbo.client.app;
+package com.xyz.dubbo.provider;
 
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
