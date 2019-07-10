@@ -4,12 +4,18 @@
 	   xmlns:context="http://www.springframework.org/schema/context"
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+
+	<!--dubbo动态配置：将dubbo配置集中，统一管理-->
+	<!--<dubbo:config-center address="zookeeper://127.0.0.1:2181"/>-->
 	<!--spring配置自动扫描-->
 	<context:component-scan base-package="com.xyz" />
 
 	<dubbo:application name="dubbo-provider" />
 	<!--zookeeper 地址为本地虚拟机-->
 	<dubbo:registry address="zookeeper://192.168.202.129:2181" />
+
+
+	<!--dubbo协议：采用NIO复用单一长连接，并使用线程池并发处理请求，减少握手和加大并发效率，性能较好（推荐使用）-->
 	<dubbo:protocol name="dubbo" port="20880" />
 
 	<!-- 声明需要暴露的服务接口 -->
