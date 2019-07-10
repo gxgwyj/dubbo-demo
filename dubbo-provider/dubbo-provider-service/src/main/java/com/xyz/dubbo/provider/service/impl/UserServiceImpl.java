@@ -12,6 +12,6 @@ public class UserServiceImpl implements UserService {
         userVO.setUserName("高旭刚");
         userVO.setPhoneNumber("15135158097");
         userVO.setEmail("498868779@qq.com");
-        return null;
+        return userVO;
     }
 }
