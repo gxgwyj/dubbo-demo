@@ -5,8 +5,12 @@
 
 
 	<dubbo:application name="dubbo-consumer" />
-	<dubbo:registry address="zookeeper://192.168.202.129:2181" />
+	<!--<dubbo:registry address="zookeeper://192.168.202.129:2181" />-->
+	<dubbo:registry address="zookeeper://127.0.0.1:2181" />
+
 
 	<dubbo:reference id="userService" interface="com.xyz.dubbo.provider.service.UserService" />
+	<!--使用dubbo提供的异步方式调用-->
+	<dubbo:reference id="asyncService" timeout="10000" interface="com.xyz.dubbo.provider.service.AsyncService"/>
 
 </beans>

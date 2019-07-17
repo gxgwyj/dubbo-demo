@@ -12,16 +12,18 @@
 
 	<dubbo:application name="dubbo-provider" />
 	<!--zookeeper 地址为本地虚拟机-->
-	<dubbo:registry address="zookeeper://192.168.202.129:2181" />
+	<!--<dubbo:registry address="zookeeper://192.168.202.129:2181" />-->
+	<dubbo:registry address="zookeeper://127.0.0.1:2181"  check="true" timeout="3000"/>
+
 
 
 	<!--dubbo协议：采用NIO复用单一长连接，并使用线程池并发处理请求，减少握手和加大并发效率，性能较好（推荐使用）-->
 	<dubbo:protocol name="dubbo" port="20880" />
+	<dubbo:protocol name="rmi" port="1099" />
 
 	<!-- 声明需要暴露的服务接口 -->
-	<dubbo:service interface="com.xyz.dubbo.provider.service.UserService" ref="userService" />
-
-
-
+	<!--同一个服务使用了不同的协议-->
+	<dubbo:service interface="com.xyz.dubbo.provider.service.UserService" ref="userService" protocol="dubbo,rmi"/>
+	<dubbo:service interface="com.xyz.dubbo.provider.service.AsyncService" ref="asyncService" protocol="dubbo"/>
 
 </beans>
