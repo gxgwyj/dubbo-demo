@@ -5,8 +5,8 @@
 
 
 	<dubbo:application name="dubbo-consumer" />
-	<!--<dubbo:registry address="zookeeper://192.168.202.129:2181" />-->
-	<dubbo:registry address="zookeeper://127.0.0.1:2181" />
+	<dubbo:registry address="zookeeper://192.168.202.128:2181" />
+	<!--<dubbo:registry address="zookeeper://127.0.0.1:2181" />-->
 
 
 	<dubbo:reference id="userService" interface="com.xyz.dubbo.provider.service.UserService" />

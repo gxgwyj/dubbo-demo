@@ -12,8 +12,8 @@
 
 	<dubbo:application name="dubbo-provider" />
 	<!--zookeeper 地址为本地虚拟机-->
-	<!--<dubbo:registry address="zookeeper://192.168.202.129:2181" />-->
-	<dubbo:registry address="zookeeper://127.0.0.1:2181"  check="true" timeout="3000"/>
+	<dubbo:registry address="zookeeper://192.168.202.128:2181" />
+	<!--<dubbo:registry address="zookeeper://127.0.0.1:2181"  check="true" timeout="3000"/>-->
 
 
 
