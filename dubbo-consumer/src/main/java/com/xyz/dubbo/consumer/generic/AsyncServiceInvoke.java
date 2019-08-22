@@ -1,4 +1,4 @@
-package com.xyz.dubbo.consumer;
+package com.xyz.dubbo.consumer.generic;
 
 import com.xyz.dubbo.provider.service.AsyncService;
 import org.springframework.context.ApplicationContext;

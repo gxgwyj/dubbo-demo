@@ -26,4 +26,8 @@
 	<dubbo:service interface="com.xyz.dubbo.provider.service.UserService" ref="userService" protocol="dubbo,rmi"/>
 	<dubbo:service interface="com.xyz.dubbo.provider.service.AsyncService" ref="asyncService" protocol="dubbo"/>
 
+    <!--一个接口的多种实现-->
+	<dubbo:service group="aliTradeService" interface="com.xyz.dubbo.provider.service.TradeService" ref="aliTradeService" protocol="dubbo" />
+	<dubbo:service group="wxTradeService" interface="com.xyz.dubbo.provider.service.TradeService" ref="wxTradeService" protocol="dubbo" />
+
 </beans>

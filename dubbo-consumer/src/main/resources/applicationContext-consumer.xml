@@ -13,4 +13,9 @@
 	<!--使用dubbo提供的异步方式调用-->
 	<dubbo:reference id="asyncService" timeout="10000" interface="com.xyz.dubbo.provider.service.AsyncService"/>
 
+	<!--一个服务接口多个实现的引用-->
+	<dubbo:reference id="aliTradeService" group="aliTradeService" interface="com.xyz.dubbo.provider.service.TradeService" />
+	<dubbo:reference id="wxTradeService" group="wxTradeService" interface="com.xyz.dubbo.provider.service.TradeService" />
+
+
 </beans>
