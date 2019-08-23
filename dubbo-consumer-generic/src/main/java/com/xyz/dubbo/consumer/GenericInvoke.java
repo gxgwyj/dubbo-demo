@@ -1,4 +1,4 @@
-package com.xyz.dubbo.consumer.generic;
+package com.xyz.dubbo.consumer;
 
 import org.apache.dubbo.config.ApplicationConfig;
 import org.apache.dubbo.config.ReferenceConfig;

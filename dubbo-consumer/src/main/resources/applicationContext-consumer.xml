@@ -14,8 +14,14 @@
 	<dubbo:reference id="asyncService" timeout="10000" interface="com.xyz.dubbo.provider.service.AsyncService"/>
 
 	<!--一个服务接口多个实现的引用-->
-	<dubbo:reference id="aliTradeService" group="aliTradeService" interface="com.xyz.dubbo.provider.service.TradeService" />
-	<dubbo:reference id="wxTradeService" group="wxTradeService" interface="com.xyz.dubbo.provider.service.TradeService" />
+	<dubbo:reference id="tradeService" group="*" interface="com.xyz.dubbo.provider.service.TradeService" />
+	<!--<dubbo:reference id="tradeService" group="aliTradeService" interface="com.xyz.dubbo.provider.service.TradeService" />-->
+	<!--<dubbo:reference id="tradeService" group="wxTradeService" interface="com.xyz.dubbo.provider.service.TradeService" />-->
 
+	<!--多版本调用-->
+	<dubbo:reference id = "blogService" interface="com.xyz.dubbo.provider.service.BlogService" version="1.0.1"/>
+
+
+	<dubbo:reference id="callbackService" interface="com.xyz.dubbo.provider.service.CallbackService" />
 
 </beans>

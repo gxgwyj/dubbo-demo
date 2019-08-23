@@ -1,4 +1,4 @@
-package com.xyz.dubbo.consumer.generic;
+package com.xyz.dubbo.consumer;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

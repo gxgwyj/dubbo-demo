@@ -1,4 +1,4 @@
-package com.xyz.dubbo.consumer.generic;
+package com.xyz.dubbo.consumer;
 
 import com.xyz.dubbo.provider.model.UserVO;
 import com.xyz.dubbo.provider.service.UserService;
@@ -13,6 +13,13 @@ public class BizService {
         // 隐式传参，必须在调用之前设置
         RpcContext.getContext().setAttachment("index","abc");
         UserVO userVO = userService.queryUserVoById("10002");
+        boolean isConsumerSide = RpcContext.getContext().isConsumerSide();
+        // 获取最后一次调用的提供方IP地址
+        String serverIP = RpcContext.getContext().getRemoteHost();
+        System.out.println(serverIP);
+        // 获取当前服务配置信息，所有配置信息都将转换为URL的参数
+        String application = RpcContext.getContext().getUrl().getParameter("application");
+        System.out.println(application);
         System.out.println(userVO.toString()); // 显示调用结果
         System.in.read(); // 按任意键退出
 
