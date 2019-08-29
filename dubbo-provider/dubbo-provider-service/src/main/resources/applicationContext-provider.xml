@@ -43,4 +43,9 @@
 
 	<!--本地存根的实现方式-->
 	<dubbo:service interface="com.xyz.dubbo.provider.service.GoodsService" ref="goodsService"  stub="com.xyz.dubbo.provider.service.GoodsServiceStub" />
+
+	<!--超时接口-->
+	<dubbo:service interface="com.xyz.dubbo.provider.service.TimeOutService" ref="timeOutService"  protocol="dubbo" />
+
+
 </beans>

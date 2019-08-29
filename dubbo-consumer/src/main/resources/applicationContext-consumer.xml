@@ -6,6 +6,8 @@
 
 	<dubbo:application name="dubbo-consumer" />
 	<dubbo:registry address="zookeeper://192.168.202.128:2181" />
+	<!--设置服务调用失败是重试次数，默认两次，建议服务端全部设置成0次，适用于非幂等操作-->
+	<dubbo:consumer retries="0"/>
 	<!--<dubbo:registry address="zookeeper://127.0.0.1:2181" />-->
 
 
@@ -28,5 +30,8 @@
 
 	<!--调用有本地存根的dubbo接口，服务端允许客户端执行一定的逻辑-->
 	<dubbo:reference id="goodsService" interface="com.xyz.dubbo.provider.service.GoodsService" stub="true" />
+
+	<!--设置接口调用超时时间（单位：毫秒）-->
+	<dubbo:reference id="timeOutService" interface="com.xyz.dubbo.provider.service.TimeOutService" timeout="3000" />
 
 </beans>
